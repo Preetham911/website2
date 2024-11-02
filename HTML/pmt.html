@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation and Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5; /* Neutral background color */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for aesthetics */
+        }
+        .payment-options, .tracking-section, .final-payment {
+            display: none;
+            margin-top: 20px;
+        }
+        .payment-method, .tracking-step {
+            margin-bottom: 15px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function showPaymentOptions() {
+            document.getElementById('order-confirmation').style.display = 'none';
+            document.getElementById('payment-options').style.display = 'block';
+        }
+
+        function proceedPayment() {
+            alert("Payment Successful! Proceeding to Order Tracking.");
+            document.getElementById('payment-options').style.display = 'none';
+            document.getElementById('tracking-section').style.display = 'block';
+        }
+
+        function showFinalPayment() {
+            document.getElementById('tracking-section').style.display = 'none';
+            document.getElementById('final-payment').style.display = 'block';
+        }
+
+        function completePayment() {
+            alert("Final Payment Completed!");
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div id="order-confirmation">
+        <h2>Order Confirmed!</h2>
+        <p>Thank you for your purchase. Please proceed with the advanced payment.</p>
+        <button class="btn" onclick="showPaymentOptions()">Proceed to Payment</button>
+    </div>
+
+    <div id="payment-options" class="payment-options">
+        <h3>Advanced Payment Options</h3>
+        <div class="payment-method">
+            <input type="radio" id="netbanking" name="payment" value="Net Banking">
+            <label for="netbanking">Net Banking</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="upi" name="payment" value="UPI">
+            <label for="upi">UPI</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="cards" name="payment" value="Banking Cards">
+            <label for="cards">Banking Cards</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="wallets" name="payment" value="Mobile Wallets">
+            <label for="wallets">Mobile Wallets</label>
+        </div>
+        <button class="btn" onclick="proceedPayment()">Proceed</button>
+    </div>
+
+    <div id="tracking-section" class="tracking-section">
+        <h3>Order Tracking</h3>
+        <div class="tracking-step">
+            <input type="checkbox" id="order-accepted" checked disabled>
+            <label for="order-accepted">Order Accepted</label>
+        </div>
+        <div class="tracking-step">
+            <input type="checkbox" id="order-dispatched" checked disabled>
+            <label for="order-dispatched">Order Dispatched</label>
+        </div>
+        <div class="tracking-step">
+            <input type="checkbox" id="shipping" checked disabled>
+            <label for="shipping">Shipping</label>
+        </div>
+        <div class="tracking-step">
+            <input type="checkbox" id="out-for-delivery" disabled>
+            <label for="out-for-delivery">Out for Delivery</label>
+        </div>
+        <div class="tracking-step">
+            <input type="checkbox" id="order-received" disabled>
+            <label for="order-received">Order Received</label>
+        </div>
+        <button class="btn" onclick="showFinalPayment()">Complete Payment</button>
+    </div>
+
+    <div id="final-payment" class="final-payment">
+        <h3>Complete the Remaining Payment</h3>
+        <div class="payment-method">
+            <input type="radio" id="final-upi" name="final-payment" value="UPI">
+            <label for="final-upi">UPI</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="cod" name="final-payment" value="COD">
+            <label for="cod">Cash on Delivery</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="final-netbanking" name="final-payment" value="Net Banking">
+            <label for="final-netbanking">Net Banking</label>
+        </div>
+        <button class="btn" onclick="completePayment()">Complete Payment</button>
+    </div>
+</div>
+
+</body>
+</html>

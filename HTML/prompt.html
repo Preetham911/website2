@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Writable Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 150px;
+            background-color: #f0f0f0;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .container {
+            background: cyan;
+            width: 0 auto;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .editable {
+            border: 2px solid #ddd;
+            padding: 50px;
+            font-size: 18px;
+            border-radius: 15px;
+            min-height: 100px;
+            margin-top: 2px;
+            text-align: left;
+            background-color: #fafafa;
+        }
+        .editable:focus {
+            outline: none;
+            border-color: #888;
+            background-color: #e8e8e8;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+        button{
+            font-size: 25px;
+            background-color: darkblue;
+            color: cyan;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <image src = "bgim.jpg.crdownload" alt = "background image" class = "background-image" height = "100%" width = "100%">
+    <div class="container">
+        <h1>Users Description</h1>
+        <p>Click on the box below to write.</p>
+
+        <!-- The contenteditable attribute makes the div editable -->
+        <div class="editable" contenteditable="true">
+        </div> 
+        <div class = "price">
+            <p>Price Range</p>     
+             <a href="vendor.html">
+                <button>high(5000+)</button><br>
+                <button>medium(2-5k)</button><br>
+                <button>low(below 2k)</button>
+            </a>
+        </div>
+        <p>*The prices may vary based on your customisation.</p>
+    </div>
+</body>
+</html>
